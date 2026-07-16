@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smbscanner"
+version = "0.1.0"
+description = "A Python tool that connects to SMB shares and scans for exposed credentials, API keys, tokens, and other sensitive information in files."
+authors = [{name= "Carlos Almeida", email= "cralmeida.contato@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "impacket>=0.13.1",
+    "tqdm>=4.68.4",
+]
+
+[project.scripts]
+smbscanner = "src.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
